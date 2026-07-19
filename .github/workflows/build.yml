@@ -22,13 +22,13 @@ jobs:
         run: go mod download
 
       - name: Build Linux
-        run: GOOS=linux GOARCH=amd64 go build -o gosh-linux .
+        run: GOOS=linux GOARCH=amd64 go build -ldflags "-X main.modulePath=github.com/moontommy/gosh"-o gosh-linux .
 
       - name: Build Windows
-        run: GOOS=windows GOARCH=amd64 go build -o gosh.exe .
+        run: GOOS=windows GOARCH=amd64 go build -ldflags "-X main.modulePath=github.com/moontommy/gosh" -o gosh.exe .
 
       - name: Build macOS
-        run: GOOS=darwin GOARCH=amd64 go build -o gosh-macos .
+        run: GOOS=darwin GOARCH=amd64 go build -ldflags "-X main.modulePath=github.com/moontommy/gosh" -o gosh-macos .
 
       - name: Create Release and Upload Binaries
         uses: softprops/action-gh-release@v1

@@ -22,7 +22,7 @@ jobs:
         run: go mod download
 
       - name: Build Linux
-        run: GOOS=linux GOARCH=amd64 go build -ldflags "-X main.modulePath=github.com/moontommy/gosh"-o gosh-linux .
+        run: GOOS=linux GOARCH=amd64 go build -ldflags "-X main.modulePath=github.com/moontommy/gosh" -o gosh-linux .
 
       - name: Build Windows
         run: GOOS=windows GOARCH=amd64 go build -ldflags "-X main.modulePath=github.com/moontommy/gosh" -o gosh.exe .

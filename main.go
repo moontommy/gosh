@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-const version = "0.0.1"
+const version = "0.0.3"
 
 var modulePath = "unknown"
 
